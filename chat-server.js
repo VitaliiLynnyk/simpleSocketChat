@@ -9,6 +9,8 @@ let clients = [];
 
 let BotFactory = require('./factory/factory');
 
+const port = process.env.PORT || 8888;
+
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/frontend.html');
 });
@@ -75,11 +77,11 @@ io.on('connection', socket => {
 
   io.emit('chat history', history);
 
-  socket.on('typing', function (data) {
+  socket.on('typing', data => {
     socket.broadcast.emit('typing', { data: data, user: user });
   });
 
-  socket.on('disconnect', function () {
+  socket.on('disconnect', () => {
     for (let i in allUsers) {
       if (allUsers[i].userName === user.userName) {
         allUsers[i].userStatus = 'justLeft';
@@ -87,7 +89,7 @@ io.on('connection', socket => {
       }
     }
 
-    setTimeout(function () {
+    setTimeout(() => {
       for (let i in allUsers) {
         if (allUsers[i].userName === user.userName) {
           allUsers[i].userStatus = 'offline';
@@ -100,10 +102,10 @@ io.on('connection', socket => {
   });
 });
 
-app.get('/style.css', function (req, res) {
+app.get('/style.css', (req, res) => {
   res.sendFile(__dirname + '/' + 'style.css');
 });
 
-http.listen(8888, function () {
+http.listen(port, () => {
   console.log('server is running on localhost:8888');
 });
