@@ -1,0 +1,205 @@
+:root {
+  --main-color: pink;
+  --primary-color: green;
+  --danger: red;
+  --black: #000000;
+  --white: #fefefe;
+  --default-font-size: 1.6rem;
+}
+
+* {
+  font-family: tahoma;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.text-center {
+  text-align: center;
+}
+
+input {
+  outline: none;
+  font-size: var(--default-font-size);
+}
+
+.main {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.logInForm {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 400px;
+  max-width: 100%;
+  max-height: 100%;
+  height: 400px;
+  margin: auto;
+  overflow: auto;
+  background: var(--white);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: var(--default-font-size);
+}
+
+.text-gradient {
+  background-image: linear-gradient(to left, var(--danger), var(--primary-color));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.logInForm__title {
+  text-transform: uppercase;
+  font-family: monospace;
+  letter-spacing: 0.15em;
+  margin: 1rem auto;
+  font-weight: 700;
+}
+
+.logInForm div {
+  display: flex;
+  flex-direction: column;
+}
+
+.logInForm__input {
+  font-size: var(--default-font-size);
+}
+
+.logInForm__btn {
+  margin: 0 auto;
+}
+
+.btn {
+  font-size: var(--default-font-size);
+  color: var(--primary-color);
+  text-decoration: none;
+  border: none;
+  padding: 0.5rem 2rem;
+  transition: all 0.2s;
+  width: fit-content;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.btn:hover {
+  color: black;
+  background-color: var(--primary-color);
+}
+
+.newName {
+  color: #bc0a13;
+}
+
+.newNickName {
+  color: #089908;
+}
+
+.statusColor,
+.justAppeared,
+.online,
+.offline,
+.justLeft {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.statusColor,
+.justAppeared {
+  background-color: #244aa2;
+}
+
+.statusColor,
+.online {
+  background-color: green;
+}
+
+.statusColor,
+.offline {
+  background-color: red;
+}
+
+.statusColor,
+.justLeft {
+  background-color: #ffe900;
+}
+
+.chatWrapper {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.6);
+  max-height: 80vh;
+}
+
+.message {
+  margin: 0.5rem 0;
+}
+
+.usersPanel {
+  flex-grow: 3;
+  padding: 5px;
+  overflow-y: scroll;
+  height: 70vh;
+
+  flex: 1 1 30%;
+}
+
+.usersPanel div {
+  display: flex;
+  margin: 1rem;
+}
+
+.content {
+  overflow-y: scroll;
+  height: 70vh;
+  overflow-wrap: break-word;
+
+  flex: 9 9 70%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.inputAndSend {
+  width: 80%;
+  margin: 1rem auto;
+
+  display: flex;
+}
+
+.inputMsg {
+  flex-grow: 9;
+}
+
+.btn__sendMsg {
+  flex-grow: 1;
+}
+
+@media only screen and (max-width: 800px) {
+  .content,
+  .usersPanel {
+    height: 40vh;
+    flex: 1 1 100%;
+  }
+
+  .chatWrapper {
+    height: 80vh;
+  }
+
+  .inputAndSend {
+    width: 100%;
+  }
+}

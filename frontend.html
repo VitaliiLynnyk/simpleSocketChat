@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>WebSockets - Simple chat</title>
+  <link rel="stylesheet"
+        type="text/css"
+        href="style.css">
+</head>
+
+<body>
+  <div id="logInForm"
+       class="logInForm">
+    <h3 class="logInForm__title text-center text-gradient">Enter to the chat</h3>
+    <div><label for="userName"
+             class="logInForm__label">User Name</label>
+      <input id="userName"
+             class="input logInForm__input"
+             type="text"
+             placeholder="Name"
+             value=""
+             required />
+    </div>
+    <div>
+      <label for="userNickName"
+             class="logInForm__label">User NickName</label>
+      <input id="userNickName"
+             class="input logInForm__input"
+             type="text"
+             placeholder="Nick Name"
+             value=""
+             required />
+    </div>
+    <input type="button"
+           class="btn logInForm__btn"
+           id="logInFormBtn"
+           value="send" />
+  </div>
+  <div id="main"
+       class="main">
+    <h1 class="logInForm__title text-center text-gradient">WebSockets - Simple chat</h1>
+    <div id="chatWrapper"
+         class="chatWrapper">
+      <div class="usersPanel"
+           id="usersPanel">
+      </div>
+      <div id="content"
+           class="content">
+        <div id="status"></div>
+      </div>
+      <div class="inputAndSend">
+        <input type="text"
+               id="inputText"
+               class="input inputMsg" />
+        <input type="button"
+               id="sendBtn"
+               value="send"
+               class="btn btn__sendMsg" />
+      </div>
+    </div>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="chat-frontend.js"></script>
+</body>
+
+</html>
