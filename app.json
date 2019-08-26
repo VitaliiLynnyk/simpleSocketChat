@@ -1,0 +1,8 @@
+{
+  "name": "Simple web app",
+  "description": "",
+  "repository": "https://github.com/VitaliiLynnyk/simpleSocketChat",
+  "logo": "",
+  "keywords": ["node", "express", "heroku"],
+  "image": "heroku/nodejs"
+}
